@@ -12,7 +12,7 @@ const TORNEO = {
   edicion: "2026",
   temporada: "Otoño",
   totalJugadores: 8, // Actualiza este número
-  estado: "En curso", // "Por comenzar" | "En curso" | "Finalizado"
+  estado: "Próximamente", // "Por comenzar" | "En curso" | "Finalizado"
 };
 
 // ─── JUGADORES ────────────────────────────────────────
@@ -188,7 +188,6 @@ const PROXIMOS_PARTIDOS = [
     hora: "17:00",
     jugador1: "Carlos Méndez",
     jugador2: "Luis Torres",
-    cancha: "Cancha Central",
     ronda: "Semifinal",
     destacado: true, // true = partido especial/final
   },
@@ -198,7 +197,6 @@ const PROXIMOS_PARTIDOS = [
     hora: "18:30",
     jugador1: "Andrés Peña",
     jugador2: "Marcos Ruiz",
-    cancha: "Cancha 2",
     ronda: "Semifinal",
     destacado: false,
   },
@@ -208,7 +206,6 @@ const PROXIMOS_PARTIDOS = [
     hora: "17:00",
     jugador1: "Por definir",
     jugador2: "Por definir",
-    cancha: "Cancha Central",
     ronda: "GRAN FINAL",
     destacado: true,},
 ];

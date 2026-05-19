@@ -47,9 +47,6 @@ function renderProximosPartidos() {
         <td class="td-ronda">
           <span class="ronda-tag ${esGranFinal ? "tag-final" : ""}">${p.ronda}</span>
         </td>
-        <td class="td-cancha">
-          <span class="cancha-icon">🏟</span> ${p.cancha}
-        </td>
         <td class="td-estado">
           <span class="estado-badge estado-pendiente">Programado</span>
         </td>
