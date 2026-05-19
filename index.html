@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Torneo de Fútbol Tenis Otoñal — Resultados, jugadores y próximos partidos." />
+    <title>FTO — Fútbol Tenis Otoñal</title>
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Fallback logo color (si no carga img) -->
+    <style>
+        .nav-logo img { background: transparent; }
+    </style>
+    </head>
+    <body>
+
+    <!-- ░░ PARTÍCULAS DE FONDO ░░ -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- ░░ NAVBAR ░░ -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo" aria-label="FTO Inicio">
+        <img src="img/Logo.png" alt="Logo FTO" onerror="this.style.display='none'" />
+        <div class="nav-logo-text">
+        <span class="nav-siglas">FTO</span>
+        <span class="nav-nombre">Fútbol Tenis Otoñal</span>
+        </div>
+    </a>
+
+    <button class="burger-btn" id="burger-btn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+        <li><a href="reglamento.html" class="nav-link">Reglamento</a></li>
+        <li><a href="jugadores.html" class="nav-link">Jugadores</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+    </ul>
+    </nav>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" aria-label="Bienvenida al torneo">
+    <div class="hero-bg-lines" aria-hidden="true"></div>
+
+    <div class="hero-badge" aria-label="Torneo en curso">
+        <span></span>
+        TEMPORADA OTOÑAL — PRÓXIMAMENTE
+        <span></span>
+    </div>
+
+    <img
+        src="img/Logo.png"
+        alt="Logo Fútbol Tenis Otoñal"
+        class="hero-logo"
+        onerror="this.style.display='none'"
+    />
+
+    <h1 class="hero-titulo">
+        <span class="linea1">Fútbol</span>
+        <span class="linea2">Tenis</span>
+        <span class="linea3">Otoñal · Edición 2026</span>
+    </h1>
+
+    <p class="hero-subtitulo">Competencia — Otoño</p>
+
+    <div class="stats-bar" role="region" aria-label="Estadísticas del torneo">
+        <div class="stat-item">
+        <span class="stat-num" id="stat-jugadores">0</span>
+        <span class="stat-label">Jugadores</span>
+        </div>
+        <div class="stat-item">
+        <span class="stat-num" id="stat-partidos">0</span>
+        <span class="stat-label">Partidos jugados</span>
+        </div>
+        <div class="stat-item">
+        <span class="stat-num" id="stat-proximos">0</span>
+        <span class="stat-label">Próximos</span>
+        </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="scroll-arrow"></div>
+    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ░░ PRÓXIMOS PARTIDOS ░░ -->
+    <section class="section" id="proximos" aria-labelledby="proximos-title">
+    <div class="container">
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">📅</span>
+        <h2 class="section-title" id="proximos-title">
+            <span>Próximos</span> Partidos
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="table-wrapper reveal reveal-delay-1">
+        <table class="fto-table" aria-label="Tabla de próximos partidos">
+            <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Enfrentamiento</th>
+                <th scope="col">Ronda</th>
+                <th scope="col">Cancha</th>
+                <th scope="col">Estado</th>
+            </tr>
+            </thead>
+            <tbody id="proximos-tbody">
+            <!-- Renderizado por JS desde data.js → PROXIMOS_PARTIDOS -->
+            <tr>
+                <td colspan="5" class="empty-row">Cargando partidos…</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ░░ RESULTADOS ░░ -->
+    <section class="section" id="resultados" aria-labelledby="resultados-title">
+    <div class="container">
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">🏆</span>
+        <h2 class="section-title" id="resultados-title">
+            <span>Resultados</span>
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="table-wrapper reveal reveal-delay-1">
+        <table class="fto-table" aria-label="Tabla de resultados">
+            <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Partido</th>
+                <th scope="col">Ronda</th>
+                <th scope="col">Duración</th>
+                <th scope="col">Estado</th>
+            </tr>
+            </thead>
+            <tbody id="resultados-tbody">
+            <!-- Renderizado por JS desde data.js → RESULTADOS -->
+            <tr>
+                <td colspan="5" class="empty-row">Cargando resultados…</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <img src="img/Logo.png" alt="Logo FTO" class="footer-logo" onerror="this.style.display='none'" />
+        <p class="footer-text">
+        <span>FTO</span> · Fútbol Tenis Otoñal · Edición 2025
+        </p>
+        <p class="footer-text">Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<!-- ░░ SCRIPTS ░░ -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
