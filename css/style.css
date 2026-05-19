@@ -165,6 +165,52 @@ img { max-width: 100%; display: block; }
   width: 100%;
 }
 
+/* Botones sueltos */
+
+.a_button {
+  position: relative;
+  font-family: var(--font-titulo);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blanco-soft);
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  border: 1px solid var(--naranja);
+  box-shadow: 0 0 8px var(--naranja);
+
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.a_button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--naranja);
+  box-shadow: 0 0 8px var(--naranja);
+  transition: width var(--transition);
+}
+
+.a_button:hover,
+.a_button.active {
+  color: var(--naranja);
+  background: rgba(255, 107, 0, 0.08);
+  border-color: rgba(255, 107, 0, 0.3);
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.6);
+}
+
+.a_button:hover::after,
+.a_button.active::after {
+  width: 100%;
+}
+
+
 /* Burger menu */
 .burger-btn {
   display: none;
@@ -480,7 +526,7 @@ img { max-width: 100%; display: block; }
 }
 
 .fto-table tbody tr {
-  border-bottom: 1px solid rgba(255, 107, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 106, 0, 0.541);
   transition: var(--transition);
 }
 

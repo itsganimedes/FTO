@@ -1,0 +1,354 @@
+/* =====================================================
+   FTO — CARTAS DE JUGADORES
+   Estilo futurista · Neón otoñal
+   ===================================================== */
+
+/* ─── GRID DE CARTAS ────────────────────────────────── */
+.cartas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+/* ─── CARTA BASE ────────────────────────────────────── */
+.carta {
+  position: relative;
+  background: var(--negro-card);
+  border: 1px solid rgba(255, 107, 0, 0.18);
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  /* Entrada animada */
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.carta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carta:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(255, 107, 0, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 0, 0.2),
+    0 8px 40px rgba(255, 107, 0, 0.18),
+    0 0 60px rgba(255, 107, 0, 0.07);
+}
+
+/* Esquinas decorativas */
+.carta::before,
+.carta::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border-color: var(--naranja);
+  border-style: solid;
+  z-index: 4;
+  transition: border-color 0.3s ease;
+}
+.carta::before { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.carta::after  { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* Variante líder */
+.carta.carta-lider {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.12), inset 0 0 30px rgba(255, 107, 0, 0.03);
+}
+.carta.carta-lider::before,
+.carta.carta-lider::after { border-color: var(--naranja); width: 22px; height: 22px; }
+
+/* ─── BANDA SUPERIOR CON RANGO ─────────────────────── */
+.carta-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0d0d0d 0%, #111 100%);
+}
+
+/* Líneas de fondo tipo cancha */
+.carta-header-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 107, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 0, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Overlay degradado inferior */
+.carta-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 70%;
+  background: linear-gradient(to top, var(--negro-card), transparent);
+  z-index: 2;
+}
+
+/* Foto / avatar del jugador */
+.carta-foto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.carta-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.carta:hover .carta-foto img {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.04);
+}
+
+/* Inicial cuando no hay imagen */
+.carta-inicial {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 107, 0, 0.08);
+  border: 2px solid rgba(255, 107, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--naranja);
+  text-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.carta:hover .carta-inicial {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
+}
+
+/* Número de ranking (esquina superior derecha) */
+.carta-rank {
+  position: absolute;
+  top: 12px; right: 12px;
+  z-index: 5;
+  font-family: var(--font-titulo);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  color: var(--naranja);
+  backdrop-filter: blur(4px);
+  clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+.carta-rank.rank-oro   { color: var(--naranja); border-color: rgba(255,107,0,0.6); text-shadow: 0 0 8px rgba(255,107,0,0.5); }
+.carta-rank.rank-plata { color: #d0d0d0;        border-color: rgba(200,200,200,0.4); }
+.carta-rank.rank-bronce{ color: #cd9a60;        border-color: rgba(205,154,96,0.4); }
+
+/* Badge de estado (esquina superior izquierda) */
+.carta-estado-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  z-index: 5;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  backdrop-filter: blur(4px);
+  clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+.badge-lider    { background: rgba(255,107,0,0.2); color: var(--naranja); border: 1px solid rgba(255,107,0,0.5); }
+.badge-activo   { background: rgba(57,255,20,0.12); color: var(--verde);  border: 1px solid rgba(57,255,20,0.35); }
+.badge-eliminado{ background: rgba(255,68,68,0.1); color: #FF5555;        border: 1px solid rgba(255,68,68,0.3); }
+
+/* ─── CUERPO DE LA CARTA ────────────────────────────── */
+.carta-body {
+  position: relative;
+  z-index: 3;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+/* Nombre y apodo */
+.carta-nombre {
+  font-family: var(--font-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blanco);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+}
+
+.carta-apodo {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--naranja);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
+  margin-bottom: 0.6rem;
+}
+
+.carta-posicion {
+  font-family: var(--font-cuerpo);
+  font-size: 0.78rem;
+  color: var(--gris-claro);
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.carta-posicion::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 1px;
+  background: rgba(255, 107, 0, 0.4);
+}
+
+/* Separador */
+.carta-sep {
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,107,0,0.3), rgba(57,255,20,0.15), transparent);
+  margin-bottom: 1.1rem;
+}
+
+/* ─── ESTADÍSTICAS ──────────────────────────────────── */
+.carta-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 0.25rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.carta:hover .stat-box {
+  background: rgba(255, 107, 0, 0.04);
+  border-color: rgba(255, 107, 0, 0.1);
+}
+
+.stat-box-val {
+  font-family: var(--font-titulo);
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.stat-box-key {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+}
+
+/* Colores específicos */
+.val-pj  { color: var(--blanco-soft); }
+.val-pg  { color: var(--verde);  text-shadow: 0 0 8px rgba(57,255,20,0.5); }
+.val-pp  { color: #FF5555;       text-shadow: 0 0 8px rgba(255,85,85,0.4); }
+
+/* Fila inferior: Sets + Puntos */
+.carta-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.stat-wide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.55rem 0.85rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.carta:hover .stat-wide {
+  background: rgba(255, 107, 0, 0.04);
+  border-color: rgba(255, 107, 0, 0.1);
+}
+
+.stat-wide-key {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+}
+
+.stat-wide-val {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.val-sets   { color: var(--blanco-soft); }
+.val-puntos { color: var(--naranja); text-shadow: 0 0 8px rgba(255,107,0,0.5); }
+
+/* ─── LÍNEA NEÓN INFERIOR (decorativa) ─────────────── */
+.carta-neon-bar {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--naranja), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  box-shadow: 0 0 8px var(--naranja);
+}
+
+.carta:hover .carta-neon-bar { opacity: 1; }
+
+/* ─── ESTADO SIN JUGADORES ──────────────────────────── */
+.cartas-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--gris);
+  text-transform: uppercase;
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cartas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .carta-header { height: 175px; }
+}
+
+@media (max-width: 480px) {
+  .cartas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  .carta-header { height: 190px; }
+  .carta-body { padding: 1rem 1.25rem 1.25rem; }
+}

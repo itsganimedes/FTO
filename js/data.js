@@ -22,7 +22,7 @@ const JUGADORES = [
     id: 1,
     nombre: "Carlos Méndez",
     apodo: "El Cañón",
-    avatar: "img/avatars/1.png", // opcional, si no hay se usa inicial
+    avatar: "", // opcional, si no hay se usa inicial
     pj: 3,   // Partidos jugados
     pg: 2,   // Partidos ganados
     pp: 1,   // Partidos perdidos
