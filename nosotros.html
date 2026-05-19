@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quiénes somos — Organización FTO, Fútbol Tenis Otoñal." />
+    <title>Nosotros — FTO</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    </head>
+    <body>
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- ░░ NAVBAR ░░ -->
+    <nav class="navbar" role="navigation">
+    <a href="index.html" class="nav-logo">
+        <img src="img/Logo.png" alt="Logo FTO" onerror="this.style.display='none'" />
+        <div class="nav-logo-text">
+        <span class="nav-siglas">FTO</span>
+        <span class="nav-nombre">Fútbol Tenis Otoñal</span>
+        </div>
+    </a>
+    <button class="burger-btn" id="burger-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html"      class="nav-link">Inicio</a></li>
+        <li><a href="reglamento.html" class="nav-link">Reglamento</a></li>
+        <li><a href="jugadores.html"  class="nav-link">Jugadores</a></li>
+        <li><a href="nosotros.html"   class="nav-link active">Nosotros</a></li>
+    </ul>
+    </nav>
+
+    <!-- ░░ HERO INTERIOR ░░ -->
+    <header class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="page-hero-tag">La organización</div>
+    <h1 class="page-hero-title"><span>Nos</span>otros</h1>
+    <p class="page-hero-sub">FTO · Quiénes somos · Edición 2026</p>
+    <div class="page-hero-line" aria-hidden="true"></div>
+    </header>
+
+    <!-- ░░ QUIÉNES SOMOS ░░ -->
+    <section class="section" aria-labelledby="quienes-title">
+    <div class="container">
+
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">⚡</span>
+        <h2 class="section-title" id="quienes-title">
+            <span>Quiénes</span> Somos
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- Card principal ancha -->
+        <div class="nosotros-full reveal reveal-delay-1">
+        <div class="info-card corner-card">
+            <div class="info-card-icon">🍂</div>
+            <div class="info-card-title">Organización FTO</div>
+            <p class="info-card-text">
+            Somos una organización anónima fundada con un solo propósito:
+            <span>llevar el Fútbol Tenis al siguiente nivel.</span>
+            Cada otoño reunimos a los mejores jugadores de la zona para disputar
+            un torneo que combina la técnica del tenis con la pasión del fútbol,
+            en una competencia que ya se ha convertido en un clásico de la temporada.
+            </p>
+            <p class="info-card-text" style="margin-top:1rem;">
+            El <span>FTO — Fútbol Tenis Otoñal</span> se realiza <span>una vez al año</span>,
+            siempre en la temporada de otoño. Desde su primera edición, el torneo ha crecido
+            en participantes, emoción y nivel competitivo. Nos enorgullece mantener el espíritu
+            amateur del juego: sin grandes presupuestos, sin patrocinios corporativos,
+            solo jugadores que aman la pelota.
+            </p>
+        </div>
+        </div>
+
+        <!-- Grid de tarjetas de info -->
+        <div class="nosotros-grid">
+
+        <div class="info-card reveal reveal-delay-1">
+            <div class="info-card-icon">🏆</div>
+            <div class="info-card-title">Nuestra Misión</div>
+            <p class="info-card-text">
+            Fomentar la <span>cultura deportiva</span> y la competencia sana entre amigos y conocidos.
+            Creemos que el deporte es el mejor constructor de comunidad, y el FTO es la prueba viviente
+            de eso: nació de una idea simple y se convirtió en una tradición otoñal que todos esperan.
+            </p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-2">
+            <div class="info-card-icon">📅</div>
+            <div class="info-card-title">Una vez al año</div>
+            <p class="info-card-text">
+            El torneo se celebra <span>anualmente</span>, siempre durante la temporada otoñal.
+            Las fechas exactas se anuncian con al menos un mes de anticipación a través de
+            este sitio oficial. Cada edición trae nuevas sorpresas, nuevas reglas y nuevos campeones.
+            </p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-1">
+            <div class="info-card-icon">🎯</div>
+            <div class="info-card-title">Formato del Torneo</div>
+            <p class="info-card-text">
+            El FTO utiliza un formato de <span>fase de grupos + eliminación directa</span>.
+            Todos los jugadores inician en la fase grupal y los mejores clasificados
+            avanzan a semifinales y la gran final. Cada partido se disputa al mejor de
+            <span>5 sets</span>, con reglas estándar de fútbol tenis.
+            </p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-2">
+            <div class="info-card-icon">🌐</div>
+            <div class="info-card-title">Sede y Canchas</div>
+            <p class="info-card-text">
+            El torneo se lleva a cabo en instalaciones locales habilitadas para el Fútbol Tenis.
+            La <span>Cancha Central</span> está reservada para los partidos de mayor jerarquía,
+            como semifinales y la gran final. La sede definitiva se confirma antes de cada edición.
+            </p>
+        </div>
+
+        </div>
+
+        <!-- Equipo organizador -->
+        <div class="section-header reveal" style="margin-top:3rem;">
+        <span class="section-icon" aria-hidden="true">👥</span>
+        <h2 class="section-title">
+            <span>Equipo</span> Organizador
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="team-grid reveal reveal-delay-1">
+        <div class="team-card">
+            <div class="team-avatar">🎙</div>
+            <div class="team-name">Dirección General</div>
+            <div class="team-role">Coordinación del torneo</div>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">⚖️</div>
+            <div class="team-name">Árbitros Oficiales</div>
+            <div class="team-role">Control de partidos</div>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">📊</div>
+            <div class="team-name">Mesa de Resultados</div>
+            <div class="team-role">Registro y estadísticas</div>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">📸</div>
+            <div class="team-name">Prensa & Difusión</div>
+            <div class="team-role">Comunicaciones FTO</div>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ░░ AVISO LEGAL / DISCLAIMER ░░ -->
+    <section class="section" aria-labelledby="disclaimer-title">
+    <div class="container">
+
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">⚠️</span>
+        <h2 class="section-title" id="disclaimer-title">
+            <span>Aviso</span> Legal
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="disclaimer-section reveal reveal-delay-1">
+        <div class="disclaimer-title">
+            <span>⚠</span>
+            FTO no se responsabiliza por
+        </div>
+        <ul class="disclaimer-list" role="list">
+            <li>
+            Lesiones físicas o daños corporales sufridos por los participantes durante el desarrollo de los partidos, entrenamientos o cualquier actividad relacionada con el torneo. La participación implica la aceptación voluntaria de los riesgos inherentes al deporte.
+            </li>
+            <li>
+            Pérdida, robo o daño de pertenencias personales, equipamiento deportivo u objetos de valor dejados en las instalaciones del torneo. Se recomienda no traer objetos de valor innecesarios.
+            </li>
+            <li>
+            Conflictos entre participantes originados dentro o fuera de las canchas. FTO promueve el juego limpio y el respeto; cualquier conducta antideportiva grave puede resultar en descalificación del torneo.
+            </li>
+            <li>
+            Condiciones climáticas adversas que obliguen a reprogramar, suspender o cancelar partidos. Las decisiones de postergación son facultad exclusiva de la organización y serán comunicadas con la mayor anticipación posible.
+            </li>
+            <li>
+            Alteraciones en el calendario de partidos derivadas de fuerza mayor, inconvenientes con las instalaciones o situaciones de caso fortuito. FTO se compromete a buscar alternativas y comunicarlas oportunamente.
+            </li>
+            <li>
+            Resultados o clasificaciones que los participantes consideren injustos si estos se determinaron conforme al reglamento vigente. Las decisiones arbitrales son inapelables durante el desarrollo del partido.
+            </li>
+            <li>
+            El uso indebido de este sitio web o de la información publicada en él por parte de terceros. Este sitio es de carácter informativo y no oficial para ningún efecto legal externo a la organización.
+            </li>
+        </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="reveal reveal-delay-2" style="margin-top:2rem;text-align:center;">
+        <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:2px;color:var(--gris-claro);text-transform:uppercase;">
+            ¿Consultas o reclamos? Comunícate directamente con la organización a través de los canales oficiales del torneo.
+        </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <img src="img/Logo.png" alt="Logo FTO" class="footer-logo" onerror="this.style.display='none'" />
+        <p class="footer-text"><span>FTO</span> · Fútbol Tenis Otoñal · Edición 2026</p>
+        <p class="footer-text">Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>

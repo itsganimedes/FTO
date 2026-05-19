@@ -9,7 +9,7 @@
 const TORNEO = {
   nombre: "Fútbol Tenis Otoñal",
   siglas: "FTO",
-  edicion: "2025",
+  edicion: "2026",
   temporada: "Otoño",
   totalJugadores: 8, // Actualiza este número
   estado: "En curso", // "Por comenzar" | "En curso" | "Finalizado"
@@ -23,7 +23,6 @@ const JUGADORES = [
     nombre: "Carlos Méndez",
     apodo: "El Cañón",
     avatar: "img/avatars/1.png", // opcional, si no hay se usa inicial
-    posicion: "Delantero",
     pj: 3,   // Partidos jugados
     pg: 2,   // Partidos ganados
     pp: 1,   // Partidos perdidos
@@ -35,7 +34,6 @@ const JUGADORES = [
     nombre: "Luis Torres",
     apodo: "La Torre",
     avatar: "",
-    posicion: "Defensor",
     pj: 3,
     pg: 2,
     pp: 1,
@@ -47,7 +45,6 @@ const JUGADORES = [
     nombre: "Andrés Peña",
     apodo: "El Toro",
     avatar: "",
-    posicion: "Mediocampista",
     pj: 2,
     pg: 1,
     pp: 1,
@@ -59,7 +56,6 @@ const JUGADORES = [
     nombre: "Marcos Ruiz",
     apodo: "Rayo",
     avatar: "",
-    posicion: "Delantero",
     pj: 2,
     pg: 1,
     pp: 1,
@@ -71,7 +67,6 @@ const JUGADORES = [
     nombre: "Diego Salinas",
     apodo: "El Mago",
     avatar: "",
-    posicion: "Mediocampista",
     pj: 2,
     pg: 1,
     pp: 1,
@@ -83,7 +78,6 @@ const JUGADORES = [
     nombre: "Julián Mora",
     apodo: "El Zurdo",
     avatar: "",
-    posicion: "Defensor",
     pj: 2,
     pg: 0,
     pp: 2,
@@ -95,7 +89,6 @@ const JUGADORES = [
     nombre: "Fernando Ríos",
     apodo: "El Gavilán",
     avatar: "",
-    posicion: "Delantero",
     pj: 1,
     pg: 0,
     pp: 1,
@@ -107,7 +100,6 @@ const JUGADORES = [
     nombre: "Sebastián Vega",
     apodo: "Cobra",
     avatar: "",
-    posicion: "Mediocampista",
     pj: 1,
     pg: 0,
     pp: 1,
@@ -121,7 +113,7 @@ const JUGADORES = [
 const RESULTADOS = [
   {
     id: 1,
-    fecha: "2025-03-15",
+    fecha: "2026-03-15",
     jugador1: "Carlos Méndez",
     jugador2: "Julián Mora",
     resultado: "3-1",
@@ -132,7 +124,7 @@ const RESULTADOS = [
   },
   {
     id: 2,
-    fecha: "2025-03-15",
+    fecha: "2026-03-15",
     jugador1: "Luis Torres",
     jugador2: "Fernando Ríos",
     resultado: "3-1",
@@ -143,7 +135,7 @@ const RESULTADOS = [
   },
   {
     id: 3,
-    fecha: "2025-03-18",
+    fecha: "2026-03-18",
     jugador1: "Andrés Peña",
     jugador2: "Sebastián Vega",
     resultado: "3-1",
@@ -154,7 +146,7 @@ const RESULTADOS = [
   },
   {
     id: 4,
-    fecha: "2025-03-20",
+    fecha: "2026-03-20",
     jugador1: "Carlos Méndez",
     jugador2: "Marcos Ruiz",
     resultado: "3-2",
@@ -165,7 +157,7 @@ const RESULTADOS = [
   },
   {
     id: 5,
-    fecha: "2025-03-22",
+    fecha: "2026-03-22",
     jugador1: "Luis Torres",
     jugador2: "Diego Salinas",
     resultado: "3-2",
@@ -176,7 +168,7 @@ const RESULTADOS = [
   },
   {
     id: 6,
-    fecha: "2025-03-24",
+    fecha: "2026-03-24",
     jugador1: "Marcos Ruiz",
     jugador2: "Julián Mora",
     resultado: "3-1",
@@ -192,7 +184,7 @@ const RESULTADOS = [
 const PROXIMOS_PARTIDOS = [
   {
     id: 1,
-    fecha: "2025-04-01",
+    fecha: "2026-04-01",
     hora: "17:00",
     jugador1: "Carlos Méndez",
     jugador2: "Luis Torres",
@@ -202,7 +194,7 @@ const PROXIMOS_PARTIDOS = [
   },
   {
     id: 2,
-    fecha: "2025-04-01",
+    fecha: "2026-04-01",
     hora: "18:30",
     jugador1: "Andrés Peña",
     jugador2: "Marcos Ruiz",
@@ -212,7 +204,7 @@ const PROXIMOS_PARTIDOS = [
   },
   {
     id: 3,
-    fecha: "2025-04-05",
+    fecha: "2026-04-05",
     hora: "17:00",
     jugador1: "Por definir",
     jugador2: "Por definir",

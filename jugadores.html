@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jugadores y clasificación del Torneo FTO 2026." />
+    <title>Jugadores — FTO</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- ░░ NAVBAR ░░ -->
+<nav class="navbar" role="navigation">
+    <a href="index.html" class="nav-logo">
+        <img src="img/Logo.png" alt="Logo FTO" onerror="this.style.display='none'" />
+        <div class="nav-logo-text">
+        <span class="nav-siglas">FTO</span>
+        <span class="nav-nombre">Fútbol Tenis Otoñal</span>
+        </div>
+    </a>
+    <button class="burger-btn" id="burger-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html"      class="nav-link">Inicio</a></li>
+        <li><a href="reglamento.html" class="nav-link">Reglamento</a></li>
+        <li><a href="jugadores.html"  class="nav-link active">Jugadores</a></li>
+        <li><a href="nosotros.html"   class="nav-link">Nosotros</a></li>
+    </ul>
+    </nav>
+
+    <!-- ░░ HERO INTERIOR ░░ -->
+    <header class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true"></div>
+    <div class="page-hero-tag">Clasificación oficial</div>
+    <h1 class="page-hero-title"><span>Juga</span>dores</h1>
+    <p class="page-hero-sub">FTO · Edición 2026 · Temporada Otoñal</p>
+    <div class="page-hero-line" aria-hidden="true"></div>
+    </header>
+
+    <!-- ░░ PODIO ░░ -->
+    <section class="section" style="padding-bottom:1rem;" aria-labelledby="podio-title">
+    <div class="container">
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">🏅</span>
+        <h2 class="section-title" id="podio-title">
+            <span>Top</span> 3
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="podio-section">
+        <div class="podio-grid" id="podio-container" aria-label="Podio de los tres mejores jugadores">
+            <!-- Renderizado por pages.js -->
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ░░ TABLA CLASIFICACIÓN ░░ -->
+    <section class="section" aria-labelledby="clasificacion-title">
+    <div class="container">
+        <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true">📊</span>
+        <h2 class="section-title" id="clasificacion-title">
+            <span>Clasifica</span>ción
+        </h2>
+        <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="table-wrapper reveal reveal-delay-1">
+        <table class="fto-table" aria-label="Tabla de clasificación de jugadores">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jugador</th>
+                <th scope="col" style="text-align:center;">PJ</th>
+                <th scope="col" style="text-align:center;">PG</th>
+                <th scope="col" style="text-align:center;">PP</th>
+                <th scope="col" style="text-align:center;">Pts</th>
+                <th scope="col" style="text-align:center;">Estado</th>
+            </tr>
+            </thead>
+            <tbody id="jugadores-tbody">
+            <tr>
+                <td colspan="7" class="empty-row">Cargando jugadores…</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="reveal reveal-delay-2" style="margin-top:1.25rem;display:flex;gap:1.5rem;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.6rem;letter-spacing:2px;color:var(--gris-claro);text-transform:uppercase;">
+        <span><strong style="color:var(--blanco-soft);">PJ</strong> = Partidos Jugados</span>
+        <span><strong style="color:var(--verde);">PG</strong> = Partidos Ganados</span>
+        <span><strong style="color:#FF4444;">PP</strong> = Partidos Perdidos</span>
+        <span><strong style="color:var(--verde);">Pts</strong> = Puntos acumulados</span>
+        </div>
+    </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <img src="img/Logo.png" alt="Logo FTO" class="footer-logo" onerror="this.style.display='none'" />
+        <p class="footer-text"><span>FTO</span> · Fútbol Tenis Otoñal · Edición 2026</p>
+        <p class="footer-text">Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>
